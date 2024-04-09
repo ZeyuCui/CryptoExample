@@ -5,11 +5,15 @@ import com.gateZ.crypto.mapper.AccountMapper;
 import com.gateZ.crypto.repository.AccountRepository;
 import com.gateZ.crypto.service.AccountService;
 import dto.AccountDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AccountServiceImpl implements AccountService {
 
     private AccountRepository accountRepository;
 
+    @Autowired
     public AccountServiceImpl(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }

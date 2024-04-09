@@ -1,7 +1,9 @@
 package com.gateZ.crypto.controller;
 
 import com.gateZ.crypto.service.AccountService;
+import com.gateZ.crypto.service.impl.AccountServiceImpl;
 import dto.AccountDto;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/accounts")
 public class AccountController {
+
     private AccountService accountService;
 
+    @Autowired
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
